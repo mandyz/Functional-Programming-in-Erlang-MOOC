@@ -13,7 +13,7 @@ perimeter({rectangle, W, H}) ->
 area({circle, R}) ->
   math:pi() * first:square(R);
 area({triangle, A, B, C}) ->
-  first:area(A,B,C); % Using Heron's formual (defined alreay in module `first`).
+  first:area(A,B,C); % Using Heron's formual (defined already in module `first`).
 area({rectangle, W, H}) ->
   W * H.
 
