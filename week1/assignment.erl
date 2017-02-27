@@ -13,7 +13,7 @@ perimeter({rectangle, W, H}) ->
 area({circle, R}) ->
   math:pi() * first:square(R);
 area({triangle, A, B, C}) ->
-  first:area(A,B,C); % Using Heron's formual (defined already in module `first`).
+  first:area(A,B,C); % Calculating area using Heron's formula (already defined in module `first`).
 area({rectangle, W, H}) ->
   W * H.
 
@@ -23,17 +23,17 @@ enclose({circle, R}) ->
 enclose(T = {triangle, A, _, _}) ->
   H = (area(T) * 2) / A,
   {rectangle, A, H};
-enclose(R = {rectangle, _, _}) -> % Smallest enclosing rectangle of a rectangle is area of the same rectangle.
+enclose(R = {rectangle, _, _}) -> % Smallest enclosing rectangle of a rectangle is the same rectangle.
   R.
 
 
-% Direct recursive defnition of bits function.
+% Direct recursive definition of bits function.
 bits(0) ->
   0;
 bits(N) when N > 0 ->
   bits(N div 2) + (N rem 2).
 
-% Tail recursive defnition of bits function.
+% Tail recursive definition of bits function.
 bitsTL(N) ->
   bitsValTL(N,0).
 
